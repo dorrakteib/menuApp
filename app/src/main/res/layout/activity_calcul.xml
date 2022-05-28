@@ -7,7 +7,7 @@
     tools:context=".CalculActivity">
 
     <TextView
-        android:id="@+id/Nom"
+        android:id="@+id/nom"
         style="@style/textStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/n"
         style="@style/textStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         android:text="N"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Nom" />
+        app:layout_constraintTop_toBottomOf="@+id/nom" />
 
     <Button
         android:id="@+id/button"
@@ -36,7 +36,7 @@
         android:text="Calculer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/n" />
 
     <TextView
         android:id="@+id/textView5"

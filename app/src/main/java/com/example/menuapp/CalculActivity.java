@@ -13,8 +13,8 @@ public class CalculActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcul);
-        tvNom = findViewById(R.id.editTextNom);
-        tvN = findViewById(R.id.editTextNumber);
+        tvNom = findViewById(R.id.nom);
+        tvN = findViewById(R.id.n);
         Bundle bundle =getIntent().getExtras();
         String nom = bundle.getString("keyNom");
         int n = bundle.getInt("keyN");
