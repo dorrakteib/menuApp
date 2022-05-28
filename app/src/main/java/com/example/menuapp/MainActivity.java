@@ -110,7 +110,12 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(this, "Browser", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemSMS:
-                Toast.makeText(this, "SMS", Toast.LENGTH_SHORT).show();
+                String phoneNumber = "smsto:"+edN.getText().toString();
+                Uri uriS = Uri.parse(phoneNumber);
+                Intent intentSms = new Intent(Intent.ACTION_SENDTO,uriS);
+                intentSms.putExtra("sms_body", edNom.getText().toString());
+                startActivity(intentSms);
+                //Toast.makeText(this, "SMS", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemEmail:
                 Toast.makeText(this, "Email", Toast.LENGTH_SHORT).show();
