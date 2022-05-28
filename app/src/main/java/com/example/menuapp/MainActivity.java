@@ -103,7 +103,11 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(this, "Dial", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemBrowser:
-                Toast.makeText(this, "Browser", Toast.LENGTH_SHORT).show();
+                String url = "http://www.vermeg.com";
+                Uri uriB=Uri.parse(url);
+                Intent i = new Intent(Intent.ACTION_VIEW,uriB);
+                startActivity(i);
+                //Toast.makeText(this, "Browser", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemSMS:
                 Toast.makeText(this, "SMS", Toast.LENGTH_SHORT).show();
