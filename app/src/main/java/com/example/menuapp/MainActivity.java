@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -94,7 +95,12 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case R.id.itemDial:
-                Toast.makeText(this, "Dial", Toast.LENGTH_SHORT).show();
+                Uri uri = Uri.parse("tel:"+edN.getText().toString());
+                //Intent intentDial = new Intent(Intent.ACTION_DIAL, uri); OR
+                Intent intentDial = new Intent(Intent.ACTION_DIAL);
+                intentDial.setData(uri);
+                startActivity(intentDial);
+                //Toast.makeText(this, "Dial", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemBrowser:
                 Toast.makeText(this, "Browser", Toast.LENGTH_SHORT).show();
