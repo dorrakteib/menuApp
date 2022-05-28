@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private final static int codeCalcul = 66;
     private final static int PICK_Camera_REQUEST = 12;
+    private static final int PICK_IMAGE_REQUEST = 13;
     EditText edNom, edN;
     Button btnAction;
     TextView tvMsg;
@@ -140,10 +141,17 @@ public class MainActivity extends AppCompatActivity {
                 //Toast.makeText(this, "Caméra", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemGalerie:
-                Toast.makeText(this, "Galerie", Toast.LENGTH_SHORT).show();
+                Intent intentGal = new Intent(Intent.ACTION_GET_CONTENT);
+                intentGal.setType("image/*");
+                //startActivityForResult(Intent.createChooser(intent, "Choisir Une Image"), PICK_IMAGE_REQUEST);
+                startActivityForResult(intentGal, PICK_IMAGE_REQUEST);
+                //Toast.makeText(this, "Galerie", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemAppel:
-                Toast.makeText(this, "Appel", Toast.LENGTH_SHORT).show();
+                Uri uriCall = Uri.parse("tel:"+edN.getText().toString());
+                Intent intentCall = new Intent(Intent.ACTION_CALL, uriCall);
+                startActivity(intentCall);
+                //Toast.makeText(this, "Appel", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemExplicit:
                 int n = Integer.parseInt(edN.getText().toString());
