@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,10 +19,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final int codeCalcul = 66;
+    private final static int codeCalcul = 66;
+    private final static int PICK_Camera_REQUEST = 12;
     EditText edNom, edN;
     Button btnAction;
     TextView tvMsg;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +124,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Email", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemCam:
-                Toast.makeText(this, "Caméra", Toast.LENGTH_SHORT).show();
+                // OUVRIR LA CAMERA
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(takePictureIntent, PICK_Camera_REQUEST);
+                //Toast.makeText(this, "Caméra", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemGalerie:
                 Toast.makeText(this, "Galerie", Toast.LENGTH_SHORT).show();
