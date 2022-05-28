@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText edNom, edN;
     Button btnAction;
     TextView tvMsg;
+    ImageView photo;
 
 
     @Override
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         edN = findViewById(R.id.editTextNumber);
         tvMsg = findViewById(R.id.msg);
         btnAction = findViewById(R.id.btnAction);
+        photo = findViewById(R.id.photo);
 
         registerForContextMenu(btnAction);
         registerForContextMenu(edNom);
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == PICK_Camera_REQUEST && (resultCode == RESULT_OK && data!=null)) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
+            photo.setImageBitmap(imageBitmap);
         }
     }
 
