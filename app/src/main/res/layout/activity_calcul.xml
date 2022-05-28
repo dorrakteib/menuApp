@@ -29,17 +29,18 @@
         app:layout_constraintTop_toBottomOf="@+id/nom" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCalcul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:onClick="calculFact"
         android:text="Calculer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/n" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvFact"
         style="@style/textStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +48,7 @@
         android:text="N!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCalcul" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -66,7 +67,7 @@
         android:text="OK"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/tvFact" />
 
     <Button
         android:id="@+id/btnCalculer"
@@ -77,5 +78,5 @@
         android:text="Calculer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/tvFact" />
 </androidx.constraintlayout.widget.ConstraintLayout>
