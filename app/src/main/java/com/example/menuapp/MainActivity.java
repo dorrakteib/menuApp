@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
                 String ch= extras.getString("keyRes");
                 tvMsg.setText(ch);
             }
+        }
+        if (requestCode == PICK_Camera_REQUEST && (resultCode == RESULT_OK && data!=null)) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
         }
     }
 
@@ -127,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 // OUVRIR LA CAMERA
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(takePictureIntent, PICK_Camera_REQUEST);
+                // RECUPERATION FEL ONACTIVITYRESULT
                 //Toast.makeText(this, "Caméra", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemGalerie:
