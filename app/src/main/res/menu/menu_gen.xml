@@ -5,8 +5,8 @@
     <item
         android:id="@+id/itemExplicit"
         android:title="Intent Explicit" />
-    <item android:title="Itent Implicit" >
-        <menu >
+    <item android:title="Intent Implicit">
+        <menu>
             <item
                 android:id="@+id/itemDial"
                 android:icon="@drawable/ic_baseline_dialpad_24"
