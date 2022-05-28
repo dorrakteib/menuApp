@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/itemExplicit"
+        android:title="Intent Explicit" />
+    <item android:title="Itent Implicit" >
+        <menu >
+            <item
+                android:id="@+id/itemDial"
+                android:title="Dial" />
+            <item
+                android:id="@+id/itemBrowser"
+                android:title="Vermeg" />
+            <item
+                android:id="@+id/itemSMS"
+                android:title="SMS" />
+            <item
+                android:id="@+id/itemEmail"
+                android:title="Email" />
+            <item
+                android:id="@+id/itemCam"
+                android:title="Caméra" />
+            <item
+                android:id="@+id/itemGalerie"
+                android:title="Galerie" />
+            <item
+                android:id="@+id/itemAppel"
+                android:title="Appel" />
+        </menu>
+    </item>
 </menu>
