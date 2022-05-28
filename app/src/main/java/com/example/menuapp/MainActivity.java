@@ -3,6 +3,7 @@ package com.example.menuapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,5 +25,10 @@ public class MainActivity extends AppCompatActivity {
         btnAction = findViewById(R.id.btnAction);
     }
 
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add("Vermeg");
+        getMenuInflater().inflate(R.menu.menu_gen, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 }

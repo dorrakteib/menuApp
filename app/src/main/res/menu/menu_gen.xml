@@ -9,24 +9,31 @@
         <menu >
             <item
                 android:id="@+id/itemDial"
+                android:icon="@drawable/ic_baseline_dialpad_24"
                 android:title="Dial" />
             <item
                 android:id="@+id/itemBrowser"
+                android:icon="@drawable/ic_baseline_open_in_browser_24"
                 android:title="Vermeg" />
             <item
                 android:id="@+id/itemSMS"
+                android:icon="@drawable/ic_baseline_sms_24"
                 android:title="SMS" />
             <item
                 android:id="@+id/itemEmail"
+                android:icon="@drawable/ic_baseline_email_24"
                 android:title="Email" />
             <item
                 android:id="@+id/itemCam"
+                android:icon="@drawable/ic_baseline_photo_camera_24"
                 android:title="Caméra" />
             <item
                 android:id="@+id/itemGalerie"
+                android:icon="@drawable/ic_baseline_image_24"
                 android:title="Galerie" />
             <item
                 android:id="@+id/itemAppel"
+                android:icon="@drawable/ic_baseline_call_24"
                 android:title="Appel" />
         </menu>
     </item>
