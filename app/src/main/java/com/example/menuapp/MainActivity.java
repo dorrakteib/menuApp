@@ -99,8 +99,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Appel", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.itemExplicit:
+                int n = Integer.parseInt(edN.getText().toString());
                 //Toast.makeText(this, "Explicit", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, CalculActivity.class);
+                intent.putExtra("keyNom", edNom.getText().toString());
+                intent.putExtra("keyN", n);
                 startActivity(intent);
                 break;
         }
