@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final int codeCalcul = 66;
     EditText edNom, edN;
     Button btnAction;
     TextView tvMsg;
@@ -38,12 +39,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_CANCELED)
-            tvMsg.setText("Annulé!");
-        if (resultCode == RESULT_OK){
-            Bundle extras = data.getExtras();
-            String ch= extras.getString("keyRes");
-            tvMsg.setText(ch);
+        if (requestCode == codeCalcul) {
+            if (resultCode == RESULT_CANCELED)
+                tvMsg.setText("Annulé!");
+            if (resultCode == RESULT_OK){
+                Bundle extras = data.getExtras();
+                String ch= extras.getString("keyRes");
+                tvMsg.setText(ch);
+            }
         }
     }
 
@@ -119,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("keyN", n);
                 //startActivity(intent);
                 //Ay code yet7at
-                startActivityForResult(intent, 66);
+                startActivityForResult(intent, codeCalcul);
                 break;
         }
 
