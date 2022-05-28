@@ -1,6 +1,7 @@
 package com.example.menuapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -32,6 +33,18 @@ public class MainActivity extends AppCompatActivity {
 
         registerForContextMenu(btnAction);
         registerForContextMenu(edNom);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_CANCELED)
+            tvMsg.setText("Annulé!");
+        if (resultCode == RESULT_OK){
+            Bundle extras = data.getExtras();
+            String ch= extras.getString("keyRes");
+            tvMsg.setText(ch);
+        }
     }
 
     @Override
@@ -104,7 +117,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, CalculActivity.class);
                 intent.putExtra("keyNom", edNom.getText().toString());
                 intent.putExtra("keyN", n);
-                startActivity(intent);
+                //startActivity(intent);
+                //Ay code yet7at
+                startActivityForResult(intent, 66);
                 break;
         }
 
